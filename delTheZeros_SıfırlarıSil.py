@@ -9,7 +9,7 @@ sampleStr_ornekKatar = """
 0000000000
 """
 
-sampleStr_ornekKatar = sampleStr_ornekKatar.replace("0","")#Change all of zeros with none, sıfırları sil
+sampleStr_ornekKatar = sampleStr_ornekKatar.replace("0","").rstrip("\n").lstrip("\n")#Change all of zeros with none, sıfırları sil
 
 print(sampleStr_ornekKatar)
 
