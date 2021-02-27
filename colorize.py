@@ -1,3 +1,7 @@
+#####################################
+######## Unfinished Business ########
+#####################################
+
 import cv2
 from tkinter import *
 from tkinter.filedialog import askopenfile
@@ -17,13 +21,20 @@ def dosyaCagir():
         dosya = x.name
         changeEntry()
 
-def otomatikDosyaYap(isim):
-    image = np.array()
-    img = cv2.(
-        img=image,
-        text=getText()
-    )
-    cv2.imwrite(text2.get() + ".png",img)
+def otomatikDosyaYap():
+    image = np.zeros((512,512,3))
+    tekrar = len(str(getText()))
+    position = ((int) (image.shape[1]/2 - tekrar * 100), (int) (image.shape[0]/2 + 100))
+    text_color = [random.randint(0,255),random.randint(0,255),random.randint(0,255)]
+    cv2.putText(
+            img=image,
+            text=getText(),
+            org=position,
+            fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+            fontScale=8, #font size
+            color=text_color,
+            thickness=2)
+    cv2.imwrite(str(getText()) + ".png",image)
 
 
 def getText():
